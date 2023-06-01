@@ -2,6 +2,10 @@
 
 Bootcamp FrontEnd - IGTI 2020
 
+![GitHub Workflow Status](https://github.com/FabianaTavares/Modulo2-Angular-Desafio/workflows/Gerador%20de%20CHANGELOG/badge.svg)
+![GitHub package.json version (subfolder of monorepo)](https://img.shields.io/github/package-json/v/FabianaTavares/Modulo2-Angular-Desafio?color=blue)
+
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.1.0.
 
 ## Observação
