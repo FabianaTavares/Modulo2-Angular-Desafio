@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { despesasDto } from '../despesasDto';
+import packageInfo from '../../../package.json';
 import { SenadoresService } from '../senadores.service';
 import { senadoresDto } from '../senadoresDto';
 
@@ -9,6 +9,7 @@ import { senadoresDto } from '../senadoresDto';
   styleUrls: ['./lista-senadores.component.scss']
 })
 export class ListaSenadoresComponent implements OnInit {
+  version: string = packageInfo.version;
 
   senadoresDto: senadoresDto[] = [];
 
@@ -29,5 +30,6 @@ export class ListaSenadoresComponent implements OnInit {
     );
 
   }
+
 
 }
