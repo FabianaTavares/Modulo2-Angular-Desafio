@@ -1,0 +1,49 @@
+<p>
+  <mat-toolbar color="primary">
+    <span>Despesas dos Senadores (2019) - {{nomeSenador}}</span>
+    <span class="example-spacer"></span>
+  </mat-toolbar>
+</p>
+
+<mat-toolbar-row>
+  <span>Resumo de despesas</span>
+</mat-toolbar-row>
+<table mat-table [dataSource]="despesasObjeto" class="mat-elevation-z8">
+  <ng-container matColumnDef="descricao">
+    <td mat-cell *matCellDef="let despesa">{{ despesa.descricao }}</td>
+  </ng-container>
+  <ng-container matColumnDef="total">
+    <td mat-cell *matCellDef="let despesa">
+      {{ despesa.total | number: "1.2-2" }}
+    </td>
+  </ng-container>
+
+  <tr mat-row *matRowDef="let row; columns: ['descricao', 'total']"></tr>
+</table>
+
+<mat-toolbar-row>
+  <span>Discriminação das despesas</span>
+</mat-toolbar-row>
+<table mat-table [dataSource]="dtoCompleto.despesas" class="mat-elevation-z8">
+  <ng-container matColumnDef="tipo">
+    <td mat-cell *matCellDef="let despesa">{{ despesa.tipo | tipo }}</td>
+  </ng-container>
+  <ng-container matColumnDef="fornec">
+    <td mat-cell *matCellDef="let despesa">{{ despesa.fornec }}</td>
+  </ng-container>
+  <ng-container matColumnDef="data">
+    <th mat-header-cell *matHeaderCellDef>Data</th>
+    <td mat-cell *matCellDef="let despesa">
+      {{ despesa.dia }}/{{ despesa.mes }}/{{ despesa.ano }}
+    </td>
+  </ng-container>
+
+  <ng-container matColumnDef="valor">
+    <th mat-header-cell *matHeaderCellDef>Valor</th>
+    <td mat-cell *matCellDef="let despesa">
+      {{ despesa.valor  | number: "1.2-2" }}
+    </td>
+  </ng-container>
+
+  <tr mat-row *matRowDef="let row; columns: ['tipo', 'fornec', 'data', 'valor']"></tr>
+</table>
