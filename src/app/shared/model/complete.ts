@@ -1,5 +1,4 @@
-import { senadoresDto } from './senadoresDto';
-import { despesasDto } from './despesasDto';
+import { despesasDto } from './expenses';
 export interface dtoCompleto {
   id: number;
   nomeSenador: string;

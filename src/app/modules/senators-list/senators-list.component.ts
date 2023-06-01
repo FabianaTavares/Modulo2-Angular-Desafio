@@ -1,12 +1,12 @@
 import { Component, OnInit } from '@angular/core';
-import packageInfo from '../../../package.json';
-import { SenadoresService } from '../senadores.service';
-import { senadoresDto } from '../senadoresDto';
+import { senadoresDto } from 'src/app/shared/model/senators';
+import packageInfo from '../../../../package.json';
+import { SenadoresService } from '../../shared/services/senators.service';
 
 @Component({
-  selector: 'app-lista-senadores',
-  templateUrl: './lista-senadores.component.html',
-  styleUrls: ['./lista-senadores.component.scss']
+  selector: 'app-senators-list',
+  templateUrl: './senators-list.component.html',
+  styleUrls: ['./senators-list.component.scss']
 })
 export class ListaSenadoresComponent implements OnInit {
   version: string = packageInfo.version;
@@ -25,7 +25,6 @@ export class ListaSenadoresComponent implements OnInit {
     this.senadoresService.getListaSenadores().subscribe(
       retorno => {
         this.senadoresDto = retorno;
-        console.log(this.senadoresDto);
       }
     );
 

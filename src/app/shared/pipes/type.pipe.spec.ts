@@ -1,4 +1,4 @@
-import { TipoPipe } from './tipo.pipe';
+import { TipoPipe } from './type.pipe';
 
 describe('TipoPipe', () => {
   it('create an instance', () => {

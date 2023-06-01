@@ -1,20 +1,20 @@
 import { HttpClientModule } from '@angular/common/http';
+import { LOCALE_ID, NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { MatToolbarModule } from '@angular/material/toolbar';
-import { MatTableModule } from '@angular/material/table';
 import { MatListModule } from '@angular/material/list';
+import { MatTableModule } from '@angular/material/table';
+import { MatToolbarModule } from '@angular/material/toolbar';
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule, LOCALE_ID } from '@angular/core';
 
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { registerLocaleData } from '@angular/common';
 import localePt from '@angular/common/locales/pt';
-import { ListaSenadoresComponent } from './lista-senadores/lista-senadores.component';
-import { DespesaSenadoresComponent } from './despesa-senadores/despesa-senadores.component';
-import { TipoPipe } from './tipo.pipe';
+import { DespesaSenadoresComponent } from './modules/senators-expenses/senators-expenses.component';
+import { ListaSenadoresComponent } from './modules/senators-list/senators-list.component';
+import { TipoPipe } from './shared/pipes/type.pipe';
 
 registerLocaleData(localePt);
 
