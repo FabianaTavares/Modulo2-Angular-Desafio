@@ -71,3 +71,6 @@ firebase.json
 **/e2e
 **/server
 **/.firebase
+/config
+.firebase/*
+/.vscode

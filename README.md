@@ -26,7 +26,7 @@ npm install -g json-server
 2. para rodar o json server:
 
 ```
-json-server --watch despesas.json
+npm run server
 ```
 
 ## Ambiente de Produção

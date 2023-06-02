@@ -6,7 +6,7 @@ import { Pipe, PipeTransform } from '@angular/core';
 export class TipoPipe implements PipeTransform {
 
   transform(value: number, args?: any): string {
-    console.log(value);
+
     switch (value) {
       case 1:
         return "Aluguel de imóveis e despesas concernentes a eles";

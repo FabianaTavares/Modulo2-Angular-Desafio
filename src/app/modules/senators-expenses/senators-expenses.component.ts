@@ -1,17 +1,15 @@
 import { Component, OnInit } from '@angular/core';
-import { SenadoresService } from '../senadores.service';
 import { ActivatedRoute } from '@angular/router';
-import { dtoCompleto } from '../dtoCompleto';
-import { despesasDto } from './../despesasDto';
-
+import { despesasDto } from 'src/app/shared/model/expenses';
+import { dtoCompleto } from '../../shared/model/complete';
+import { SenadoresService } from '../../shared/services/senators.service';
 
 @Component({
-  selector: 'app-despesa-senadores',
-  templateUrl: './despesa-senadores.component.html',
-  styleUrls: ['./despesa-senadores.component.scss']
+  selector: 'app-senators-expenses',
+  templateUrl: './senators-expenses.component.html',
+  styleUrls: ['./senators-expenses.component.scss'],
 })
 export class DespesaSenadoresComponent implements OnInit {
-
   id: string;
   nomeSenador: string;
   despesasDto: despesasDto[];
@@ -20,12 +18,12 @@ export class DespesaSenadoresComponent implements OnInit {
     nomeSenador: '',
     despesas: [],
   };
-  despesasObjeto = {};
+  despesasObjeto = [];
 
   constructor(
     private senadoresService: SenadoresService,
     private route: ActivatedRoute
-  ) { }
+  ) {}
 
   ngOnInit(): void {
     this.recuperaIdUrl();
@@ -33,28 +31,23 @@ export class DespesaSenadoresComponent implements OnInit {
   }
 
   recuperaIdUrl() {
-    this.route.paramMap.subscribe(paramMap => {
+    this.route.paramMap.subscribe((paramMap) => {
       this.id = paramMap.get('id');
     });
   }
 
   buscaDespesas() {
-    this.senadoresService.getDespesasSenadores(this.id).subscribe(
-      retorno => {
-        this.dtoCompleto = retorno;
-        this.nomeSenador = this.dtoCompleto.nomeSenador;
-        this.despesasObjeto = this.recuperaDespesas();
-        console.log(this.despesasObjeto);
-        console.log(this.dtoCompleto);
-      }
-    );
+    this.senadoresService.getDespesasSenadores(this.id).subscribe((retorno) => {
+      this.dtoCompleto = retorno;
+      this.nomeSenador = this.dtoCompleto.nomeSenador;
+      this.despesasObjeto = this.recuperaDespesas();
+    });
   }
 
   recuperaDespesas() {
     let despesasObjeto = [];
 
     this.dtoCompleto.despesas.forEach((element) => {
-
       let hasElement = despesasObjeto.find((hasElement) => {
         return hasElement.id === element.tipo;
       });
@@ -122,6 +115,4 @@ export class DespesaSenadoresComponent implements OnInit {
     });
     return despesasObjeto;
   }
-
-
 }

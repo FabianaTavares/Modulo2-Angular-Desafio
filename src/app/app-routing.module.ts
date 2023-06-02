@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
-import { DespesaSenadoresComponent } from './despesa-senadores/despesa-senadores.component';
-import { ListaSenadoresComponent } from './lista-senadores/lista-senadores.component';
+import { RouterModule, Routes } from '@angular/router';
+import { DespesaSenadoresComponent } from './modules/senators-expenses/senators-expenses.component';
+import { ListaSenadoresComponent } from './modules/senators-list/senators-list.component';
 
 
 const routes: Routes = [
