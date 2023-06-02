@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.2.1](https://github.com/FabianaTavares/Modulo2-Angular-Desafio/compare/v0.2.0...v0.2.1) (2023-06-02)
+
+
+### Funcionalidades
+
+* melhorias para deploy ([af625d5](https://github.com/FabianaTavares/Modulo2-Angular-Desafio/commit/af625d52b4311b8881b1affbb2b08e69055dedcf))
+
 ## [0.2.0](https://github.com/FabianaTavares/Modulo2-Angular-Desafio/compare/v0.1.1...v0.2.0) (2023-06-01)
 
 
