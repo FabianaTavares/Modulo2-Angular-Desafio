@@ -106,4 +106,4 @@ Os alunos deverão desempenhar as seguintes atividades:
 3. Lembre-se de incluir os dados de localização para português na aplicação, adicione o seguinte código no app.module.ts:
 
 Além disso, inclua o provider { provide: LOCALE_ID, useValue: 'pt' } 4. O json-server pode ser instalado com o comando npm install -g json-server.
-Para executar, use o comando json-server --watch nomeDoArquivo.json.
+Para executar, use o comando json-server --watch nomeDoArquivo.json. Testes
